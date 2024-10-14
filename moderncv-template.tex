@@ -1,11 +1,11 @@
 %% moderncv-template.tex (compiled with pdfLaTeX)
-%% Copyright 2021 Christine Chai
+%% Copyright 2024 Christine P. Chai
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at https://spdx.org/licenses/LPPL-1.3c.html.
 
-% Customized ModernCV template developed by Christine Chai
+% Customized ModernCV template developed by Christine P. Chai
 % Built upon the moderncv package from Xavier Danaux
 
 %----------------------------------------------------------------------------------------
@@ -17,6 +17,17 @@
 \moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
+% Need to redefine \cventry due to updates in moderncv package
+\renewcommand*{\cventry}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries#3}%
+    \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
+    \ifthenelse{\equal{#5}{}}{}{, #5}%
+    \ifthenelse{\equal{#6}{}}{}{, #6}%
+    .\strut%                             %Fullstop added
+    \ifx&#7&%
+    \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
 \usepackage{lastpage}
@@ -24,7 +35,7 @@
 
 \usepackage{url}
 \usepackage{multicol}
-\usepackage{fontawesome}
+\usepackage{fontawesome5}
 \usepackage[bottom]{footmisc} % enabling footnotes
 \usepackage{amsmath}
 
@@ -161,7 +172,7 @@
 
 \section{Introduction}
 
-\cvitem{$\bullet$}{This CV template is created by Christine P. Chai (\texttt{cpchai21@gmail.com}) from the ModernCV template (Xavier Danaux).
+\cvitem{$\bullet$}{\href{https://github.com/star1327p/moderncv-template}{\textit{This CV template}} is created by Christine P. Chai (\texttt{cpchai21@gmail.com}) from the ModernCV template (Xavier Danaux).
 \newline{The ModernCV package in LaTeX can be downloaded on \href{https://github.com/moderncv/moderncv}{\textit{GitHub}} or \href{https://www.overleaf.com/latex/templates/modern-cv-and-cover-letter-2015-version/sttkgjcysttn}{\textit{Overleaf}}.}}
 
 \vspace{10pt}
@@ -210,9 +221,14 @@
 
 \section{Work Experience}
 
+\subsection{Senior Data Scientist, Group Alpha, Company Awesome}
+
+\cventry{$\bullet$}{Industry Work Project}{}{February 2023 -- Present}{}{First line of description.
+\newline{Second line of description.}}
+
 \subsection{Postdoctoral Fellow, Subject, Random University}
 
-\cventry{$\bullet$}{New Start}{}{January 2022 -- Present}{}{First line of description.
+\cventry{$\bullet$}{Postdoc Project}{}{January 2022 -- December 2022}{}{First line of description.
 \newline{Second line of description.}}
 
 \subsection{Research Assistant, Subject, University of Elsewhere}
@@ -248,7 +264,9 @@
 %	PUBLICATIONS SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Publications}
+\section{Selected Publications}
+
+\cvitem {$\bullet$}{\textbf{Lastname, F.}, Undergrad, D., Mentor, P. Paper Awesome and Creative. Top Journal DEF, March 2023.}
 
 \cvitem {$\bullet$}{\textbf{Lastname, F.}, Sample, T.G. Main Paper for Job Market. Journal Name, October 2021.}
 
@@ -263,7 +281,9 @@
 %	PRESENTATIONS SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Presentations}
+\section{Selected Presentations}
+
+\cvitem{$\bullet$}{\textbf{My Postdoc Research Title:} Description here. One sentence summary. Top Tier Conference IEEE, July 2022.}
 
 \cvitem{$\bullet$}{\textbf{Job Talk Title:} Description here. One sentence summary. Random University, September 2021.}
 
@@ -272,13 +292,5 @@
 \cvitem{$\bullet$}{\textbf{Presentation Title:} Description here. Is it a poster, contributed talk, or an invited talk? Conference ZZZ, January 2018.}
 
 \cvitem{$\bullet$}{\textbf{Undergraduate Presentation:} Description here. What is this presentation about? University of Somewhere, April 2016.}
-
-
-
-
-
-
-
-
 
 \end{document}
