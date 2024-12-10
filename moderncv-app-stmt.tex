@@ -1,0 +1,111 @@
+%% moderncv-template.tex (compiled with pdfLaTeX)
+%% Copyright 2024 Christine P. Chai
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at https://spdx.org/licenses/LPPL-1.3c.html.
+
+% Customized ModernCV template developed by Christine P. Chai
+% Built upon the moderncv package from Xavier Danaux
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt,letterpaper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+% Need to redefine \cventry due to updates in moderncv package
+\renewcommand*{\cventry}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries#3}%
+    \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
+    \ifthenelse{\equal{#5}{}}{}{, #5}%
+    \ifthenelse{\equal{#6}{}}{}{, #6}%
+    .\strut%                             %Fullstop added
+    \ifx&#7&%
+    \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{fontawesome5}
+\usepackage[bottom]{footmisc} % enabling footnotes
+\usepackage{amsmath}
+
+%\setlength{\voffset}{-0.2in}
+%\setlength{\textheight}{10.5in} % increase text height to fit resume on 1 page
+
+%\setlength{\voffset}{-0.2in}
+%\setlength{\textheight}{10.5in} % increase text height to fit resume on 1 page
+
+\usepackage[scale=0.92]{geometry} % Reduce document margins
+\setlength{\hintscolumnwidth}{0.5cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Firstname} % Your first name
+\familyname{Lastname} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Application Questions \\ Company XYZ ABC, Inc.}
+\address{P.O. Box xxxxx, City, State, Zip Code}{}
+%\address{P.O. Box 25142, Arlington, VA 22202}{}
+\mobile{(111) 111-1111}
+\email{firstname.lastname@gmail.com}
+\homepage{(put your url here)}
+
+\extrainfo{%
+\httplink{www.linkedin.com/in/yourname}\\
+\httplink{github.com/yourGitHubID}
+}
+
+%\photo[70pt][0.4pt]{picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%\quote{"A witty and playful quotation" - John Smith}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\clearpage
+
+\makecvtitle % Print the CV title
+
+\vspace{-20pt}
+%\vspace{-35pt}
+
+\section{1. First Question}
+
+\cvitem{}{One-sentence summary of my answer.}
+
+\cvitem{}{\textbf{Bullet Point One}: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis arcu, commodo nec nunc non, egestas lacinia est. Mauris sem ligula, vehicula ac diam eget, tempor blandit justo. Proin mollis vitae dolor eu condimentum. Sed non leo lacus. Vestibulum pellentesque sit amet nisi sed faucibus. Donec libero massa, pulvinar vitae nulla id, ultrices viverra tellus.}
+
+\cvitem{}{\textbf{Bullet Point Two}: Donec sodales, est eu interdum scelerisque, felis ipsum bibendum turpis, fringilla vehicula ipsum magna sit amet nulla. Vestibulum a dapibus dui, eget rutrum lectus. Sed a ultrices lectus, ut varius nisl. Aliquam et aliquet velit. Proin accumsan sollicitudin tortor sit amet dictum. Nam commodo, metus ac fringilla pellentesque, metus nisi molestie sapien, nec volutpat erat nisl rutrum est.}
+
+\section{2. Second Question -- Multiple Parts}
+
+\subsection{First Part}
+
+\cvitem{}{Duis viverra est vel velit malesuada, at venenatis ante tempor. Aenean arcu urna, porttitor id sollicitudin eu, luctus eget mauris. Mauris vel feugiat nisl. Aliquam id condimentum lorem. Praesent congue commodo porttitor. Sed tincidunt, nunc rhoncus commodo eleifend, augue erat rhoncus nulla, id lobortis massa urna ac felis. Donec sapien orci, venenatis id vestibulum accumsan, accumsan ac augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.}
+
+\subsection{Second Part}
+
+\cvitem{}{Maecenas et orci eu massa ultrices varius. Maecenas nibh nulla, gravida quis porttitor id, vulputate eget mi. Phasellus eget lacus sit amet mi hendrerit consectetur et id urna. Duis dictum ante et nunc tincidunt, eu elementum nisl maximus. Aliquam ac efficitur metus. Nunc a orci auctor dolor consectetur molestie. Suspendisse quis accumsan arcu. Donec nec scelerisque purus.}
+
+\section{3. Third Question}
+
+\cvitem{}{Mauris a ultrices est, nec suscipit dui. Pellentesque posuere, metus non consequat porttitor, ligula magna porta nibh, id interdum lectus felis vel nisl. Nullam luctus blandit magna tempus auctor. Phasellus volutpat, est a ullamcorper pulvinar, ipsum ex suscipit libero, sed molestie sapien mauris et lectus. Donec faucibus, purus vel tristique congue, eros est placerat justo, ut luctus erat sem id mi. Phasellus aliquam magna et orci fermentum cursus. Sed eget turpis quis velit malesuada venenatis. Fusce in ultrices massa.}
+
+\section{4. How did you generate the Lorem ipsum text?}
+
+\cvitem{}{I used \url{https://www.lipsum.com/} to generate the dummy text.}
+ 
+\end{document} 
